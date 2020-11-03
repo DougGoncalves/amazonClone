@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Checkout from './pages/Checkout'
 import Login from './pages/Login'
 import Payment from './pages/Payment'
+import Orders from './pages/Orders'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import {useStateValue} from './services/StateProvider'
 import {auth} from './firebase'
@@ -38,7 +39,11 @@ useEffect(() => {
   return (
     <Router>
       <div className="app">
-        <Switch>
+        <Switch>         
+          <Route path="/orders">
+            <Header/>
+            <Orders />
+          </Route>
           <Route path="/payment">
             <Header/>
             <Elements stripe={promise}>
